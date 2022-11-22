@@ -1,25 +1,23 @@
+// Dependecias Necesarias
+import { useState } from 'react'
+
+//Data
+import Resenias from './data/Resenias';
+
+//Componentes
+import Resenia from './componentes/Resenia'
+import ReseniaList from './componentes/ReseniaList'
+
 const App = () =>{
-    const bootcamps = [
-        {
-            id: 1,
-            name: 'Php BootCamp',
-            average_raiting: 8
-        },
-        {
-            id: 2,
-            name: 'JavaScript BootCamp',
-            average_raiting: 9
-        },
-    ]
+    
+    // Crear estado para el arreglo de resenias
+    const [lista_resenias , 
+        setLista_resenias] = useState(Resenias)
+
     return (
-        <>
-        <h1>Listado de BootCamps</h1>
-        <ul>
-            { bootcamps.map((bootcamp , index) => (
-                <li key={index}>{bootcamp.name}</li>
-            )) }
-        </ul>
-        </>
+        <div className="container">
+            <ReseniaList listaresenias={lista_resenias}/>
+        </div>
     )
 }
 
