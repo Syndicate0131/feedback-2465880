@@ -1,6 +1,6 @@
 import Resenia from "./Resenia"
 
-const ReseniaList = ( {listaresenias} ) => {
+const ReseniaList = ( {listaresenias, deleteResenia} ) => {
 
             // Condicional en caso de que no lleguen los datos
             if (!listaresenias || listaresenias.length === 0) {
@@ -22,6 +22,7 @@ const ReseniaList = ( {listaresenias} ) => {
             { listaresenias.map((resenia)=>
             (
                 <Resenia 
+                    deleteResenia={deleteResenia}
                     key={resenia.id}
                     resenia={resenia}
                 />

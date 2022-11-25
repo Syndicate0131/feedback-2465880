@@ -14,9 +14,15 @@ const App = () =>{
     const [lista_resenias , 
         setLista_resenias] = useState(Resenias)
 
+    const deleteResenia = id => {
+        window.confirm("Seguro de eliminar la resenia")
+    }
+
     return (
         <div className="container">
-            <ReseniaList listaresenias={lista_resenias}/>
+            <ReseniaList 
+            deleteResenia={deleteResenia}
+            listaresenias={lista_resenias}/>
         </div>
     )
 }
